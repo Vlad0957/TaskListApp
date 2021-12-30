@@ -1,6 +1,6 @@
 import React from 'react'
-import Notes from './components/Notes'
-import Form from './components/Form'
+
+
 
 const styles = {
   div: {
@@ -22,18 +22,18 @@ const styles = {
   },
   divTwo: {
     
-      height: 340,
-      width: 340,
+      height: 240,
+      width: 240,
       border: 'solid black 1px',
       borderRadius: 10,
       overflow: 'auto',
       display: 'flex',
-      flexDirection: 'row',
+      flexDirection: 'column',
       alignItems: 'start',
-      justifyContent:'center',
+      justifyContent:'start',
       padding: 5,
       margin: 5,
-      fontSize: 24,
+      fontSize: 15,
       fontWeight: 'bold',
       fontColor: '#E5E9F0',
   
@@ -51,22 +51,24 @@ const styles = {
     border: 'solid black 1px',
   }
 }
+export default function Note({note}){
 
-function App() {
-
-  
   return (
-  
-    <div style={styles.div} className="container">
-    <div style={styles.divTwo}>
-    <Notes />
-
+    <div className='container' style={styles.divTwo}>
+ 
+    <span>name:{note.user}</span>
+    <span>email:{note.email}</span>
+    <span>Status:{note.status}</span>
+    <span>Task:</span>
+    <div>
+    <span>{note.title}</span>
     </div>
-    <Form />
-    </div>
+    {/* <ul className="list-group">
+    <li className="list-group-item"></li>
     
+    </ul> */}
+    
+    </div>
+  )
   
-  );
 }
-
-export default App;
