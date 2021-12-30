@@ -56,18 +56,14 @@ export default function Note({note}){
   return (
     <div className='container' style={styles.divTwo}>
  
-    <span>name:{note.user}</span>
+    <span>name:{note.username}</span>
     <span>email:{note.email}</span>
     <span>Status:{note.status}</span>
     <span>Task:</span>
     <div>
-    <span>{note.title}</span>
+    <span>{note.text}</span>
     </div>
-    {/* <ul className="list-group">
-    <li className="list-group-item"></li>
-    
-    </ul> */}
-    
+   
     </div>
   )
   

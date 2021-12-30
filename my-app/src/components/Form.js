@@ -50,10 +50,10 @@ export default function Form (){
     console.log('newTask', e.target.newTask.value)
     dispatch(addNewTask({
       id: Math.floor(Math.random() * 14),
-      user: e.target.userName.value,
+      username: e.target.userName.value,
       email: e.target.newEmail.value,
-      title: e.target.newTask.value,
-      status: 'create'
+      text: e.target.newTask.value,
+      status: 0
     }))
     e.target.userName.value = ''
     e.target.newEmail.value = ''

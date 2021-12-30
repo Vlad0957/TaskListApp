@@ -58,6 +58,7 @@ function App() {
   return (
   
     <div style={styles.div} className="container">
+    
     <div style={styles.divTwo}>
     <Notes />
 
