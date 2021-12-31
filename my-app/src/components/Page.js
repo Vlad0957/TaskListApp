@@ -1,6 +1,7 @@
 import React from 'react'
-import Page from './components/Page'
-import Form from './components/Form'
+import {useSelector, useDispatch} from 'react-redux'
+import {fetchTasks} from '../redux/actions/actions'
+import Notes from './Notes'
 
 
 
@@ -53,20 +54,29 @@ const styles = {
     border: 'solid black 1px',
   }
 }
+export default function Page(){
 
-function App() {
+  const pages = useSelector((state) => state.page)
+  const dispatch = useDispatch()
+  function buttonSubmit(e){
+    e.preventDefault()
+    console.log('YEES')
+    for(let i =1; i<60; i++){
   
-  
+      dispatch(fetchTasks({i}))
+    }
+  }
+
   return (
-  
-    <div style={styles.div} className="container">
-    
-    <Page />
-    <Form />
+    <div>
+      <button type="button" className="btn btn-secondary btn-sm" onClick={buttonSubmit}>Load tasks</button>
+    <div id="carouselExampleControlsNoTouching" className="carousel slide" data-bs-touch="false" data-bs-interval="false"  style={styles.divTwo} >
+    {pages
+    .sort((a, b)=>a.num - b.num)
+    .map(page=><Notes page={page} key={page.num}/>)}
+    </div>
     </div>
     
-  
-  );
+    
+  )
 }
-
-export default App;

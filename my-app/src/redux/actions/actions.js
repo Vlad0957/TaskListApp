@@ -6,8 +6,10 @@ type: ADD_TASK,
 
 })
 
-export const fetchTasks = ()=>({
+export const fetchTasks = (payload)=>({
   type: REQUEST_TASKS,
+  payload: payload,
+
 })
 
 export const addFetchTasks = (payload) =>{

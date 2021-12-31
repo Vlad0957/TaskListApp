@@ -6,9 +6,10 @@ import reducerTask from './reducer'
 
 
 const preloadedState = {
-  tasks: [
-    
-  ],
+  page: [{
+    num: '',
+    tasks: [],
+  }],
   users: [],
 }
 const sagaMiddleware = createSagaMiddleware()

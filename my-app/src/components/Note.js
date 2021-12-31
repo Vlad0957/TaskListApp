@@ -22,8 +22,8 @@ const styles = {
   },
   divTwo: {
     
-      height: 240,
-      width: 240,
+      height: 140,
+      width: 200,
       border: 'solid black 1px',
       borderRadius: 10,
       overflow: 'auto',
@@ -54,7 +54,7 @@ const styles = {
 export default function Note({note}){
 
   return (
-    <div className='container' style={styles.divTwo}>
+    <div style={styles.divTwo}>
  
     <span>name:{note.username}</span>
     <span>email:{note.email}</span>
