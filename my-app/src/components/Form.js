@@ -72,7 +72,7 @@ export default function Form (){
   name="newEmail"></input>
   </div>
 <div className="mb-3">
-  <label for="exampleFormControlTextarea1" className="form-label">Example textarea</label>
+  <label for="exampleFormControlTextarea1" className="form-label">Text</label>
   <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"
   name="newTask"></textarea>
 </div>

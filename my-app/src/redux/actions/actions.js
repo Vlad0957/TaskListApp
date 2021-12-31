@@ -1,4 +1,4 @@
-import {ADD_TASK, REQUEST_TASKS, FETCH_TASKS} from './type'
+import {ADD_TASK, REQUEST_TASKS, FETCH_TASKS, SORT_BY_PARAM, CLEAR_STATE} from './type'
 
 export const addNewTask = (payload) =>({
 payload,
@@ -21,4 +21,18 @@ console.log(payload.payload.message.tasks)
   
   }
 }
-  
+
+export const sortByParam = (payload)=>{
+
+return {
+payload, 
+type: SORT_BY_PARAM
+}
+}
+export const clearState = ()=>{
+  return{
+    type: CLEAR_STATE
+  }
+}
+
+

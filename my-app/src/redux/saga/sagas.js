@@ -1,16 +1,17 @@
 import {takeEvery, put, call} from 'redux-saga/effects'
-import {REQUEST_TASKS, ADD_TASK} from '../actions/type';
-import { addFetchTasks } from '../actions/actions';
+import {REQUEST_TASKS, ADD_TASK, SORT_BY_PARAM} from '../actions/type';
+import { addFetchTasks, sortByParam } from '../actions/actions';
 
 
 
 export default function* sagaWatcher(){
   yield takeEvery(REQUEST_TASKS, sagaWorker)
   yield takeEvery(ADD_TASK, sagaWorkerAddTask)
+  yield takeEvery(SORT_BY_PARAM, sagaWorkerSortField)
 }
 
 function* sagaWorker(data){
-
+  console.log(data.payload.i)
 const payload =  yield call(fetchTasks, data)
 yield put(addFetchTasks({
   payload, num: data.payload.i
@@ -22,15 +23,29 @@ function* sagaWorkerAddTask(data){
 
   const payload = yield call(createNewTask, data)
   console.log(payload)
-  // yield put(addFetchTasks({
-  //   payload
-  // }))
- 
+  
+  }
+
+  function* sagaWorkerSortField(data){
+    console.log(data.payload)
+    const payload = yield call(sortByField, data)
+  console.log(payload)
+  yield put(addFetchTasks({
+    payload, num: data.payload.num
+  }))
+
+  }
+
+  async function sortByField(data){
+    console.log('SortField request', data.payload)
+    const response = await fetch(`https://uxcandy.com/~shapoval/test-task-backend/v2/?developer=Vlad&sort_field=${data.payload.value}&page=${data.payload.num}`)
+  let res = response.json()
+    return res
   }
 
 async function fetchTasks(num){
   console.log('Fetch request', num.payload.i)
-  const response = await fetch(`https://uxcandy.com/~shapoval/test-task-backend/v2/?developer=Vlad&sort_direction=desc&page=${num.payload.i}`)
+  const response = await fetch(`https://uxcandy.com/~shapoval/test-task-backend/v2/?developer=Vlad&page=${num.payload.i}`)
   let res = response.json()
   console.log(res)
   return res

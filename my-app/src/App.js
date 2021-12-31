@@ -1,13 +1,14 @@
 import React from 'react'
 import Page from './components/Page'
 import Form from './components/Form'
+import SortBar from './components/SortBar';
 
 
 
 const styles = {
   div: {
-    height: 900,
-    width: 1540,
+    height: 650,
+    width: 1500,
     border: 'solid black 1px',
     borderRadius: 10,
     overflow: 'auto',
@@ -60,7 +61,7 @@ function App() {
   return (
   
     <div style={styles.div} className="container">
-    
+    <SortBar />
     <Page />
     <Form />
     </div>

@@ -1,14 +1,14 @@
 import React from 'react'
 import {useSelector, useDispatch} from 'react-redux'
-import {fetchTasks} from '../redux/actions/actions'
+import {fetchTasks, clearState} from '../redux/actions/actions'
 import Notes from './Notes'
 
 
 
 const styles = {
   div: {
-    height: 900,
-    width: 1540,
+    height: 450,
+    width: 1400,
     border: 'solid black 1px',
     borderRadius: 10,
     overflow: 'auto',
@@ -25,7 +25,7 @@ const styles = {
   },
   divTwo: {
     
-      height: 700,
+      height: 500,
       width: 540,
       border: 'solid black 1px',
       borderRadius: 10,
@@ -60,8 +60,11 @@ export default function Page(){
   const dispatch = useDispatch()
   function buttonSubmit(e){
     e.preventDefault()
+    dispatch(clearState({
+    
+    }))
     console.log('YEES')
-    for(let i =1; i<60; i++){
+    for(let i =1; i<10; i++){
   
       dispatch(fetchTasks({i}))
     }
