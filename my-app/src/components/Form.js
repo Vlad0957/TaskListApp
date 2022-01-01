@@ -27,8 +27,8 @@ const styles = {
     color: '#FFFFFF',
   },
   form: {
-    height: 384,
-    width: 340,
+    height: 350,
+    width: 250,
     border: 'solid black 1px',
     borderRadius: 10,
     overflow: 'auto',
@@ -37,7 +37,7 @@ const styles = {
     alignItems: 'start',
     padding: 5,
     margin: 5,
-    fontSize: 24,
+    fontSize: 15,
     fontWeight: 'bold',
     fontColor: '#E5E9F0',
   }

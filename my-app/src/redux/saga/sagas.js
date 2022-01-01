@@ -38,7 +38,7 @@ function* sagaWorkerAddTask(data){
 
   async function sortByField(data){
     console.log('SortField request', data.payload)
-    const response = await fetch(`https://uxcandy.com/~shapoval/test-task-backend/v2/?developer=Vlad&sort_field=${data.payload.value}&page=${data.payload.num}`)
+    const response = await fetch(`https://uxcandy.com/~shapoval/test-task-backend/v2/?developer=Vlad&sort_field=${data.payload.value.field}&sort_direction=${data.payload.value.direction}&page=${data.payload.num}`)
   let res = response.json()
     return res
   }

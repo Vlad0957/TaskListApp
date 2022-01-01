@@ -7,13 +7,13 @@ import SortBar from './components/SortBar';
 
 const styles = {
   div: {
-    height: 650,
-    width: 1500,
+    height: 600,
+    width: 800,
     border: 'solid black 1px',
     borderRadius: 10,
     overflow: 'auto',
     display: 'flex',
-    flexDirection: 'row',
+    flexDirection: 'column',
     alignItems: 'start',
     justifyContent:'center',
     padding: 5,
@@ -26,7 +26,7 @@ const styles = {
   divTwo: {
     
       height: 700,
-      width: 540,
+      width: 650,
       border: 'solid black 1px',
       borderRadius: 10,
       overflow: 'auto',
@@ -62,8 +62,10 @@ function App() {
   
     <div style={styles.div} className="container">
     <SortBar />
-    <Page />
-    <Form />
+    <div style={styles.divTwo}>
+      <Page />
+      <Form />
+    </div>
     </div>
     
   
