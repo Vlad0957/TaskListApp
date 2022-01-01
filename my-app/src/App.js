@@ -8,7 +8,7 @@ import SortBar from './components/SortBar';
 const styles = {
   div: {
     height: 600,
-    width: 800,
+    width: 680,
     border: 'solid black 1px',
     borderRadius: 10,
     overflow: 'auto',

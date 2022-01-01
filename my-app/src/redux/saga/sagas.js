@@ -21,8 +21,8 @@ yield put(addFetchTasks({
 function* sagaWorkerAddTask(data){
   console.log(data.payload.text)
 
-  const payload = yield call(createNewTask, data)
-  console.log(payload)
+  const response = yield call(createNewTask, data)
+  console.log(response)
   
   }
 

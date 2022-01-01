@@ -1,6 +1,6 @@
 import React from 'react'
 import {useDispatch} from 'react-redux'
-import {addNewTask} from '../redux/actions/actions'
+import {addNewTask, fetchTasks} from '../redux/actions/actions'
 
 
 const styles = {
@@ -58,6 +58,7 @@ export default function Form (){
     e.target.userName.value = ''
     e.target.newEmail.value = ''
     e.target.newTask.value = ''
+    
   }
   return(
     <form style={styles.form} onSubmit={handleClick} >

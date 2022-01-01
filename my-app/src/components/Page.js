@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState, useMemo} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import {fetchTasks, clearState} from '../redux/actions/actions'
 import Notes from './Notes'
@@ -45,8 +45,8 @@ const styles = {
   divThree: {
     
     height: 35,
-    width: 450,
-    border: 'solid black 0.5px',
+    width: 300,
+    // border: 'solid black 0.5px',
     borderRadius: 8,
     overflow: 'auto',
     // display: 'flex',
@@ -78,28 +78,36 @@ const styles = {
 }
 export default function Page(){
 
-  const pages = useSelector((state) => state.page)
   const dispatch = useDispatch()
-  const [page, setPage] = useState(0)
+  const [page, setPage] = useState(1)
+  const pages = useSelector((state) => state.page)
+  
   useEffect(()=>{
-    
+   
       console.log('YEES')
-      for(let i =1; i<50; i++){
-    
-        dispatch(fetchTasks({i}))
+    for(let i =1; i<50; i++){
+      
+      dispatch(fetchTasks({i}))
     }
+  
+  
+  
+ 
 
   }, [])
+  
   const currentPage = pages.find(el=>el.num==page)
   const paginate = (num)=>{
     setPage(num)
-    console.log('Page', num)
+    console.log('Page', page)
   }
   return (
 <div>
     <div   style={styles.divTwo} >
+    {pages.length>1 &&
+      <Notes page={currentPage} key={currentPage.num}/>
+    }
     
-    <Notes page={currentPage} key={currentPage.num}/>
 
     </div>
    <div style={{width: 30}}>
@@ -107,12 +115,19 @@ export default function Page(){
   <ul style={styles.divThree} class="pagination">
   {pages
     .sort((a, b)=>a.num - b.num)
-    .map(page=>
-   
-    <li class="page-item"><a style={styles.a} class="page-link" href="#" onClick={()=>{
+    .map(page=>{
+      if(page.tasks.length){
+      return(
+       <li class="page-item"><a style={styles.a} class="page-link" href="#" onClick={()=>{
       paginate(page.num)
       }
       }>{page.num}</a></li>
+    )
+      }
+      
+    }
+   
+    
 
     )}
    

@@ -29,15 +29,45 @@ const styles = {
   form: {
     height: 50,
     width: 280,
+    // border: 'solid black 1px',
+    borderRadius: 10,
+    overflow: 'auto',
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 5,
+    margin: 5,
+    fontSize: 12,
+    fontWeight: 'bold',
+    fontColor: '#E5E9F0',
+  },
+  select: {
+    height: 30,
+    width: 200,
+    // border: 'solid black 1px',
+    borderRadius: 10,
+    overflow: 'auto',
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 5,
+    margin: 2,
+    fontSize: 12,
+    fontWeight: 'bold',
+    fontColor: '#E5E9F0',
+  },
+  button: {
+    height: 30,
+    width: 100,
     border: 'solid black 1px',
     borderRadius: 10,
     overflow: 'auto',
     display: 'flex',
     flexDirection: 'row',
-    alignItems: 'start',
+    alignItems: 'center',
     padding: 5,
     margin: 5,
-    fontSize: 24,
+    fontSize: 12,
     fontWeight: 'bold',
     fontColor: '#E5E9F0',
   }
@@ -54,7 +84,7 @@ function handleClickSort(e){
 
   console.log('click', e.target.field.value)
   console.log('click', e.target.direction.value)
-  for(let i =1; i<10; i++){
+  for(let i =1; i<50; i++){
   
     dispatch(sortByParam({
       value: {
@@ -67,7 +97,7 @@ function handleClickSort(e){
 }
   return (
     <form onSubmit={handleClickSort} style={styles.form}>
-       <select style={{width: 100}}
+       <select style={styles.select}
         
         name="field" className="form-select" aria-label="Default select example">
   <option >Sort_field</option>
@@ -76,15 +106,15 @@ function handleClickSort(e){
   <option value="email">email</option>
   <option value="status">status</option>
 </select>
-<select style={{width: 100}}
+<select style={styles.select}
         
         name="direction" className="form-select" aria-label="Default select example">
   <option >direction</option>
   <option value="asc">asc</option>
   <option value="desc">desc</option>
-  
+
 </select>
-<button type="submit" className="btn btn-secondary btn-sm" >sort</button>
+<button style={styles.button} type="submit" className="btn btn-secondary btn-sm" >sort</button>
 
     </form>
   )
