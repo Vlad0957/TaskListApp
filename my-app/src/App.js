@@ -2,16 +2,17 @@ import React from 'react'
 import Page from './components/Page'
 import Form from './components/Form'
 import SortBar from './components/SortBar';
+import HeaderBar from './components/HeaderBar';
 
 
 
 const styles = {
   div: {
-    height: 600,
-    width: 680,
+    height: 720,
+    width: 700,
     border: 'solid black 1px',
     borderRadius: 10,
-    overflow: 'auto',
+    // overflow: 'auto',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'start',
@@ -26,10 +27,10 @@ const styles = {
   divTwo: {
     
       height: 700,
-      width: 650,
-      border: 'solid black 1px',
+      width: 680,
+      // border: 'solid black 1px',
       borderRadius: 10,
-      overflow: 'auto',
+      // overflow: 'auto',
       display: 'flex',
       flexDirection: 'row',
       alignItems: 'start',
@@ -61,6 +62,7 @@ function App() {
   return (
   
     <div style={styles.div} className="container">
+    <HeaderBar />
     <SortBar />
     <div style={styles.divTwo}>
       <Page />

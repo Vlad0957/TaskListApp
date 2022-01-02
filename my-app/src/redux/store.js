@@ -10,7 +10,20 @@ const preloadedState = {
     num: '',
     tasks: [],
   }],
-  users: [],
+  user: {
+    name: '',
+    email:'',
+    token: '',
+  },
+  answer: {
+    status: '',
+    message: {
+      
+    }
+    
+  },
+
+  loading: false
 }
 const sagaMiddleware = createSagaMiddleware()
 const mainStore = createStore(

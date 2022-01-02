@@ -1,4 +1,4 @@
-import {ADD_TASK, REQUEST_TASKS, FETCH_TASKS, SORT_BY_PARAM, CLEAR_STATE} from './type'
+import {ADD_TASK, REQUEST_TASKS, FETCH_TASKS, SORT_BY_PARAM, CLEAR_STATE, USER_DATA, USER_TOKEN} from './type'
 
 export const addNewTask = (payload) =>({
 payload,
@@ -30,9 +30,23 @@ type: SORT_BY_PARAM
 }
 }
 export const clearState = ()=>{
-  return{
+  return {
     type: CLEAR_STATE
   }
+}
+
+export const userAuth = (payload) => {
+  return{
+payload, 
+type: USER_DATA
+  }
+}
+export const authUserToken = (payload)=>{
+  return {
+    payload,
+    type: USER_TOKEN
+  }
+
 }
 
 

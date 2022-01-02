@@ -1,6 +1,6 @@
 import {takeEvery, put, call} from 'redux-saga/effects'
-import {REQUEST_TASKS, ADD_TASK, SORT_BY_PARAM} from '../actions/type';
-import { addFetchTasks, sortByParam } from '../actions/actions';
+import {REQUEST_TASKS, ADD_TASK, SORT_BY_PARAM, USER_DATA} from '../actions/type';
+import { addFetchTasks, sortByParam, authUserToken } from '../actions/actions';
 
 
 
@@ -8,7 +8,10 @@ export default function* sagaWatcher(){
   yield takeEvery(REQUEST_TASKS, sagaWorker)
   yield takeEvery(ADD_TASK, sagaWorkerAddTask)
   yield takeEvery(SORT_BY_PARAM, sagaWorkerSortField)
+  yield takeEvery(USER_DATA, sagaWorkerUserAuth)
 }
+
+
 
 function* sagaWorker(data){
   console.log(data.payload.i)
@@ -34,6 +37,29 @@ function* sagaWorkerAddTask(data){
     payload, num: data.payload.num
   }))
 
+  }
+
+  function* sagaWorkerUserAuth(data){
+    console.log(data.payload, 'useAuth')
+    const response = yield call(userAuthor, data)
+    console.log(response, 'responseToken')
+    yield put(authUserToken({
+      payload: response
+    }))
+  }
+  async function userAuthor(data){
+
+    let formData = new FormData()
+    formData.append('username',  data.payload.username)
+    formData.append('password',  data.payload.password)
+    const response = await fetch('https://uxcandy.com/~shapoval/test-task-backend/v2/login?developer=Vlad', {
+      method: 'POST',
+      body: formData
+    })
+    // console.log(response.json())
+    const res = response.json()
+  
+    return res
   }
 
   async function sortByField(data){

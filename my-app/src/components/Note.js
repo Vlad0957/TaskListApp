@@ -1,4 +1,7 @@
 import React from 'react'
+import {useDispatch, useSelector} from 'react-redux'
+import ChangeBar from '../components/changeForm'
+
 
 
 
@@ -23,7 +26,7 @@ const styles = {
   divTwo: {
     
       height: 140,
-      width: 200,
+      width: 350,
       border: 'solid black 1px',
       borderRadius: 10,
       overflow: 'auto',
@@ -32,7 +35,7 @@ const styles = {
       alignItems: 'start',
       justifyContent:'start',
       padding: 5,
-      margin: 5,
+      margin: 10,
       fontSize: 15,
       fontWeight: 'bold',
       fontColor: '#E5E9F0',
@@ -53,6 +56,7 @@ const styles = {
 }
 export default function Note({note}){
 
+  const user = useSelector(state=>state.user)
   return (
     <div style={styles.divTwo}>
  
@@ -63,7 +67,10 @@ export default function Note({note}){
     <div>
     <span>{note.text}</span>
     </div>
-   
+    {user.token.length > 1 &&
+
+   <ChangeBar note={note}/>
+    }
     </div>
   )
   

@@ -28,7 +28,7 @@ const styles = {
   },
   form: {
     height: 350,
-    width: 250,
+    width: 200,
     border: 'solid black 1px',
     borderRadius: 10,
     overflow: 'auto',
@@ -37,7 +37,52 @@ const styles = {
     alignItems: 'start',
     padding: 5,
     margin: 5,
-    fontSize: 15,
+    fontSize: 12,
+    fontWeight: 'bold',
+    fontColor: '#E5E9F0',
+  },
+  input: {
+    height: 30,
+    width: 120,
+    borderRadius: 8,
+    overflow: 'auto',
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'start',
+    padding: 5,
+    margin: 5,
+    fontSize: 12,
+    fontWeight: 'bold',
+    fontColor: '#E5E9F0',
+  },
+  textarea: {
+    height: 60,
+    width: 150,
+    borderRadius: 8,
+    overflow: 'auto',
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'start',
+    padding: 5,
+    margin: 5,
+    fontSize: 12,
+    fontWeight: 'bold',
+    fontColor: '#E5E9F0',
+  },
+  button:{
+    height: 30,
+    width: 60,
+    border: 'solid black 1px',
+    borderRadius: 10,
+    overflow: 'auto',
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+
+    padding: 5,
+    margin: 5,
+    fontSize: 12,
     fontWeight: 'bold',
     fontColor: '#E5E9F0',
   }
@@ -64,20 +109,20 @@ export default function Form (){
     <form style={styles.form} onSubmit={handleClick} >
 <div className="mb-3">
   <label for="exampleFormControlInput1" className="form-label">User name</label>
-  <input type="user" className="form-control" id="exampleFormControlInput1" placeholder="user name"
+  <input style={styles.input} type="user" className="form-control" id="exampleFormControlInput1" placeholder="user name"
   name='userName'></input>
   </div>
     <div className="mb-3">
   <label for="exampleFormControlInput1" className="form-label">Email address</label>
-  <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com"
+  <input style={styles.input} type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com"
   name="newEmail"></input>
   </div>
 <div className="mb-3">
   <label for="exampleFormControlTextarea1" className="form-label">Text</label>
-  <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"
+  <textarea style={styles.textarea} className="form-control" id="exampleFormControlTextarea1" rows="3"
   name="newTask"></textarea>
 </div>
- <button type="submit" className="btn btn-primary" >Create task</button>
+ <button style={styles.button} type="submit" className="btn btn-primary btn-sm" >Create</button>
     </form>
   )
 }

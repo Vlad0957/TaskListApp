@@ -25,8 +25,8 @@ const styles = {
   },
   divTwo: {
     
-      height: 450,
-      width: 300,
+      height: 480,
+      width: 400,
       border: 'solid black 1px',
       borderRadius: 10,
       overflow: 'auto',
@@ -36,7 +36,7 @@ const styles = {
       justifyContent:'center',
       padding: 5,
       margin: 5,
-      fontSize: 24,
+      fontSize: 14,
       fontWeight: 'bold',
       fontColor: '#E5E9F0',
   
@@ -63,7 +63,7 @@ const styles = {
 },
   span: {
     margin: 5,
-    fontSize: 24,
+    fontSize: 8,
     fontWeight: 'bold',
     color: '#FFFFFF',
   },
@@ -79,8 +79,7 @@ const styles = {
 export default function Page(){
 
   const dispatch = useDispatch()
-  const [page, setPage] = useState(1)
-  const pages = useSelector((state) => state.page)
+  
   
   useEffect(()=>{
    
@@ -90,13 +89,13 @@ export default function Page(){
       dispatch(fetchTasks({i}))
     }
   
-  
-  
- 
-
   }, [])
+
+  const [page, setPage] = useState(1)
+  const pages = useSelector((state) => state.page)
+
   
-  const currentPage = pages.find(el=>el.num==page)
+  const currentPage = pages.find(el=>el.num===page)
   const paginate = (num)=>{
     setPage(num)
     console.log('Page', page)
@@ -104,8 +103,8 @@ export default function Page(){
   return (
 <div>
     <div   style={styles.divTwo} >
-    {pages.length>1 &&
-      <Notes page={currentPage} key={currentPage.num}/>
+    {currentPage!=undefined &&
+      <Notes page={currentPage} />
     }
     
 

@@ -1,19 +1,30 @@
-import {ADD_TASK, FETCH_TASKS, CLEAR_STATE} from './actions/type'
+import {FETCH_TASKS, CLEAR_STATE, USER_TOKEN} from './actions/type'
 const initialState = {}
 const reducerTask = (state = initialState, action) =>{
 
   switch(action.type){
     case CLEAR_STATE:
       return {
-        page: [{
+        ...state, page: [{
           num: '',
           tasks: [],
         }],
-        users: [],
+        
       };
       case FETCH_TASKS:
         return {
-          ...state, page: [...state.page, {num: action.payload.num, tasks: [...action.payload.payload.message.tasks]}]
+          ...state, page: [...state.page, {
+            num: action.payload.num, 
+            tasks: [...action.payload.payload.message.tasks]
+          }]
+        }
+      case USER_TOKEN:
+        return {
+          ...state, user: {
+            name:'',
+            email: '',
+            token: action.payload.payload.message.token
+          }
         }
     default: 
     return state
