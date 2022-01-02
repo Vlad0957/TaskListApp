@@ -1,5 +1,5 @@
 import {takeEvery, put, call} from 'redux-saga/effects'
-import {REQUEST_TASKS, ADD_TASK, SORT_BY_PARAM, USER_DATA} from '../actions/type';
+import {REQUEST_TASKS, ADD_TASK, SORT_BY_PARAM, USER_DATA, CHANGE_TASK} from '../actions/type';
 import { addFetchTasks, sortByParam, authUserToken } from '../actions/actions';
 
 
@@ -9,9 +9,13 @@ export default function* sagaWatcher(){
   yield takeEvery(ADD_TASK, sagaWorkerAddTask)
   yield takeEvery(SORT_BY_PARAM, sagaWorkerSortField)
   yield takeEvery(USER_DATA, sagaWorkerUserAuth)
+  yield takeEvery(CHANGE_TASK, sagaWorkerchangeTask)
 }
 
 
+function* sagaWorkerchangeTask(data){
+console.log(data, 'dataChange')
+}
 
 function* sagaWorker(data){
   console.log(data.payload.i)

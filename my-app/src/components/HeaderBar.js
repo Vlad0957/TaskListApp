@@ -1,5 +1,6 @@
 import React from 'react'
 import {useDispatch, useSelector} from 'react-redux'
+import {deleteUser} from '../redux/actions/actions'
 import UserAuth from './UserAuth'
 
 const styles = {
@@ -75,12 +76,20 @@ const styles = {
 
 export default function HeaderBar(){
 const user = useSelector(state=>state.user)
+const dispatch = useDispatch()
+
+function handleClick(e){
+  e.preventDefault()
+  console.log('delete')
+  dispatch(deleteUser())
+}
+
   return(
     <div>
     {user.token.length>0 &&
       <div style={styles.div}>
       <span style={{fontSize: 12}}>Admin</span>
-      <button type="submit" className="btn btn-primary btn-sm" >Quite</button>
+      <button onClick={handleClick} type="submit" className="btn btn-primary btn-sm" >Quit</button>
       </div>
 }
 {user.token.length==0 &&

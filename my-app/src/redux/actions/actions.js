@@ -1,4 +1,4 @@
-import {ADD_TASK, REQUEST_TASKS, FETCH_TASKS, SORT_BY_PARAM, CLEAR_STATE, USER_DATA, USER_TOKEN} from './type'
+import {ADD_TASK, REQUEST_TASKS, FETCH_TASKS, SORT_BY_PARAM, CLEAR_STATE, USER_DATA, USER_TOKEN, DELETE_USER, CHANGE_TASK} from './type'
 
 export const addNewTask = (payload) =>({
 payload,
@@ -46,7 +46,19 @@ export const authUserToken = (payload)=>{
     payload,
     type: USER_TOKEN
   }
-
 }
+export const deleteUser = ()=>{
+  return {
+
+    type: DELETE_USER
+  }
+}
+export const changeTask = (payload)=>{
+  return {
+    type: CHANGE_TASK,
+    payload,
+  }
+}
+
 
 

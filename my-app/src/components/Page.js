@@ -44,9 +44,9 @@ const styles = {
   },
   divThree: {
     
-    height: 35,
-    width: 300,
-    // border: 'solid black 0.5px',
+    height: 40,
+    width: 390,
+    // border: 'solid black 1px',
     borderRadius: 8,
     overflow: 'auto',
     // display: 'flex',
@@ -109,7 +109,7 @@ export default function Page(){
     
 
     </div>
-   <div style={{width: 30}}>
+   <div style={{width: 60}}>
      <nav aria-label="Page navigation example">
   <ul style={styles.divThree} class="pagination">
   {pages
@@ -126,8 +126,6 @@ export default function Page(){
       
     }
    
-    
-
     )}
    
   </ul>

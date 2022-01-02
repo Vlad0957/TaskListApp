@@ -40,8 +40,8 @@ const styles = {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
-    padding: 5,
+    justifyContent: 'end',
+    padding: 10,
     margin: 5,
     fontSize: 12,
     fontWeight: 'bold',
@@ -89,7 +89,6 @@ const dispatch = useDispatch()
   function handleClick(e){
     e.preventDefault();
     console.log('hanClickdl', e.target.username.value)
-    // console.log()
     dispatch(userAuth({
       username: e.target.username.value,
       password: e.target.password.value
