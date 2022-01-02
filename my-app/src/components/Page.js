@@ -79,7 +79,7 @@ const styles = {
 export default function Page(){
 
   const dispatch = useDispatch()
-  
+  const state = useSelector((state) => state)
   
   useEffect(()=>{
    

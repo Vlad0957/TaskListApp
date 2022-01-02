@@ -1,4 +1,4 @@
-import {FETCH_TASKS, CLEAR_STATE, USER_TOKEN, DELETE_USER} from './actions/type'
+import {FETCH_TASKS, CLEAR_STATE, USER_TOKEN, DELETE_USER, ADD_ANSWER} from './actions/type'
 const initialState = {}
 const reducerTask = (state = initialState, action) =>{
 
@@ -32,6 +32,13 @@ const reducerTask = (state = initialState, action) =>{
             name:'',
             email: '',
             token: ''
+          }
+        }
+      case ADD_ANSWER:
+      return {
+          ...state, answer: {
+            status: action.payload.payload.status,
+            message: action.payload.payload.message,
           }
         }
         

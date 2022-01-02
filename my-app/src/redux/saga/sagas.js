@@ -15,6 +15,7 @@ export default function* sagaWatcher(){
 
 function* sagaWorkerchangeTask(data){
 console.log(data, 'dataChange')
+yield call(changeTask, data)
 }
 
 function* sagaWorker(data){
@@ -30,6 +31,7 @@ function* sagaWorkerAddTask(data){
 
   const response = yield call(createNewTask, data)
   console.log(response)
+  
   
   }
 
@@ -50,6 +52,18 @@ function* sagaWorkerAddTask(data){
     yield put(authUserToken({
       payload: response
     }))
+  }
+  async function changeTask(data){
+    let formData = new FormData()
+    formData.append('token',  data.payload.payload.token)
+    formData.append('text',  data.payload.payload.text)
+    formData.append('status',  data.payload.payload.status)
+    const response = await fetch(`https://uxcandy.com/~shapoval/test-task-backend/v2/edit/${data.payload.payload.id}?developer=Vlad`, {
+      method: 'POST',
+      body: formData
+    })
+    console.log(response.json())
+
   }
   async function userAuthor(data){
 
