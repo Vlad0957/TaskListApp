@@ -94,7 +94,7 @@ export default function Form (){
     e.preventDefault()
     console.log('newTask', e.target.newTask.value)
     dispatch(addNewTask({
-      id: Math.floor(Math.random() * 14),
+      // id: Math.floor(Math.random() * 14),
       username: e.target.userName.value,
       email: e.target.newEmail.value,
       text: e.target.newTask.value,

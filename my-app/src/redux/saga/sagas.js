@@ -1,6 +1,6 @@
 import {takeEvery, put, call} from 'redux-saga/effects'
 import {REQUEST_TASKS, ADD_TASK, SORT_BY_PARAM, USER_DATA, CHANGE_TASK} from '../actions/type';
-import { addFetchTasks, sortByParam, authUserToken, addAnswer } from '../actions/actions';
+import { addFetchTasks, authUserToken, addAnswer } from '../actions/actions';
 
 
 
@@ -28,7 +28,7 @@ yield put(addAnswer(
 function* sagaWorker(data){
   console.log(data.payload.i)
 const payload =  yield call(fetchTasks, data)
-console.log(payload, 'FETCH_TASKS')
+console.log(payload.message, 'FETCH_TASKS')
 if(payload.message.tasks.length>0){
   yield put(addFetchTasks({
     payload, num: data.payload.i
@@ -121,7 +121,7 @@ async function fetchTasks(num){
   console.log('Fetch request', num.payload.i)
   const response = await fetch(`https://uxcandy.com/~shapoval/test-task-backend/v2/?developer=Vlad&page=${num.payload.i}`)
   let res = response.json()
-  console.log(res)
+  console.log(res, 'RESSSS!!!!!')
   return res
 }
 

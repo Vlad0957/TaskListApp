@@ -94,7 +94,7 @@ const [view, setView] = useState(false)
     </div>
  </div>
     
-    {user.token.length > 10&&view!=true &&
+    {user.token.length > 10 && view!=true &&
       <button style={styles.button} type="submit" className="btn btn-primary btn-sm" onClick={handleClick}>Edit</button>
     }
     {view === true &&

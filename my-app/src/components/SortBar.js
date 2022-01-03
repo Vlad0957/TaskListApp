@@ -76,7 +76,7 @@ const styles = {
 
 export default function SortBar(){
   const dispatch = useDispatch()
-
+  const state = useSelector(state => state)
 function handleClickSort(e){
   e.preventDefault()
   dispatch(clearState({
@@ -87,18 +87,20 @@ function handleClickSort(e){
   console.log('click', e.target.direction.value)
   dispatch(sortParamAdd({
     field: e.target.field.value,
-    direct: e.target.direction.value
+    direct: e.target.direction.value,
+    pageNum: state.currentPage.pageNum
+
   }))
-  for(let i =1; i<50; i++){
+ 
   
     dispatch(sortByParam({
       value: {
         field: e.target.field.value,
         direction: e.target.direction.value
       },
-      num: i,
+      num: state.currentPage.pageNum,
     }))
-  }
+  
 }
   return (
     <form onSubmit={handleClickSort} style={styles.form}>

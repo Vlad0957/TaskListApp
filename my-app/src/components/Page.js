@@ -1,6 +1,6 @@
 import React, {useEffect, useState, useMemo} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
-import {fetchTasks, clearState} from '../redux/actions/actions'
+import {fetchTasks, clearState, sortByParam, sortParamAdd} from '../redux/actions/actions'
 import Notes from './Notes'
 import Alert from './Alert'
 
@@ -80,55 +80,75 @@ const styles = {
 export default function Page(){
 
   const dispatch = useDispatch()
-  const answer = useSelector((state) => state.answer)
+  const [page, setPage] = useState(1)
+  const tasksPerPage = 3
+  const pagesTotal = []
+  
   useEffect(()=>{
     
-    console.log(answer, 'answer')
-      console.log('YEES')
-    for(let i =1; i<50; i++){
-      
-      dispatch(fetchTasks({i}))
-    }
+   
+    dispatch(sortParamAdd({
+      field: state.currentPage.field,
+      direct: state.currentPage.direct,
+      pageNum: page
   
-  }, [])
-
-  const [page, setPage] = useState(1)
+    }))
+    dispatch(sortByParam({
+      value: {
+        field: state.currentPage.field,
+        direction: state.currentPage.direct
+      },
+      num: page,
+    }))
+    
+  }, [page])
+  
+  const state = useSelector((state) => state)
+  const answer = useSelector((state) => state.answer)
+console.log(state, 'state')
+  const totalCount = useSelector(state => state.page[0].total_count)
+  console.log(totalCount, '!!!!!!!!!!!!!!')
   const pages = useSelector((state) => state.page)
-
+  const pageCount = Math.ceil(totalCount/tasksPerPage)
   
-  const currentPage = pages.find(el=>el.num===page)
+  for(let j = 1; j <= pageCount; j++){
+pagesTotal.push(j)
+  }
+
+  console.log(pagesTotal, 'pagesTotal')
+  
+  
   const paginate = (num)=>{
     setPage(num)
     console.log('Page', page)
   }
+  const currentPage = pages[0]
   return (
 <div>
-{ answer.status !=='' &&
+{ answer.status !== '' &&
 
 <Alert />
 }
     <div   style={styles.divTwo} >
-    {currentPage!=undefined &&
+   
       <Notes page={currentPage} />
-    }
     
-
     </div>
    <div style={{width: 60}}>
      <nav aria-label="Page navigation example">
   <ul style={styles.divThree} class="pagination">
-  {pages
-    .sort((a, b)=>a.num - b.num)
+  {pagesTotal
+    
     .map(page=>{
-      if(page.tasks.length){
-      return(
-       <li class="page-item"><a style={styles.a} class="page-link" href="#" onClick={()=>{
-      paginate(page.num)
-      }
-      }>{page.num}</a></li>
-    )
-      }
       
+      return(
+       <li class="page-item"><a style={styles.a} class="page-link" href="#" onClick={
+         ()=>{
+      paginate(page)
+      }
+      }>{page}</a></li>
+    )
+
     }
    
     )}

@@ -9,6 +9,7 @@ const preloadedState = {
   page: [{
     num: '',
     tasks: [],
+    total_count: '',
   }],
   user: {
     name: '',
@@ -16,8 +17,8 @@ const preloadedState = {
     token: '',
   },
   currentPage: {
-    field: '',
-    direct: '',
+    field: 'sort_field',
+    direct: 'sort_direction',
     pageNum: '',
   },
   answer: {

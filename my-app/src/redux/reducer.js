@@ -13,9 +13,10 @@ const reducerTask = (state = initialState, action) =>{
       };
       case FETCH_TASKS:
         return {
-          ...state, page: [...state.page, {
+          ...state, page: [ {
             num: action.payload.num, 
-            tasks: [...action.payload.payload.message.tasks]
+            tasks: [...action.payload.payload.message.tasks],
+            total_count: action.payload.payload.message.total_task_count
           }]
         }
       case USER_TOKEN:
@@ -53,7 +54,7 @@ const reducerTask = (state = initialState, action) =>{
           ...state, currentPage: {
             field: action.payload.field,
             direct: action.payload.direct,
-            pageNum: '',
+            pageNum: action.payload.pageNum,
           }
         }
         

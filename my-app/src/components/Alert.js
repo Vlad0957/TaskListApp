@@ -25,6 +25,7 @@ const styles = {
 export default function Alert(){
 
   const answer = useSelector(state=>state.answer.message)
+  const state = useSelector(state => state)
   const curentSort = useSelector(state=>state.currentPage)
   const dispatch = useDispatch()
   function handleClick(e){
@@ -35,7 +36,7 @@ export default function Alert(){
     dispatch(clearState({
 
     }))
-    for(let i =1; i<50; i++){
+    
       
       // dispatch(fetchTasks({i}))
       dispatch(sortByParam({
@@ -43,9 +44,9 @@ export default function Alert(){
           field: curentSort.field,
           direction: curentSort.direct
         },
-        num: i,
+        num: state.currentPage.pageNum,
       }))
-    }
+    
 
   }
   return (

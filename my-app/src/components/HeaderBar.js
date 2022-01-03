@@ -88,7 +88,7 @@ function handleClick(e){
     <div>
     {user.token.length>0 &&
       <div style={styles.div}>
-      <span style={{fontSize: 12}}>Admin</span>
+      <span style={{fontSize: 12}}></span>
       <button onClick={handleClick} type="submit" className="btn btn-primary btn-sm" >Quit</button>
       </div>
 }
