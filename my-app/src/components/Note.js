@@ -1,4 +1,4 @@
-import React from 'react'
+import {React, useState} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import ChangeBar from '../components/changeForm'
 
@@ -53,11 +53,34 @@ const styles = {
     height: 350,
     width: 340,
     border: 'solid black 1px',
-  }
+  },
+  button: {
+    height: 30,
+    width: 100,
+    border: 'solid black 1px',
+    borderRadius: 10,
+    overflow: 'auto',
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 5,
+    margin: 5,
+    fontSize: 12,
+    fontWeight: 'bold',
+    fontColor: '#E5E9F0',
+  },
 }
 export default function Note({note}){
-
+const [view, setView] = useState(false)
   const user = useSelector(state=>state.user)
+  function handleClick(e){
+    e.preventDefault()
+    console.log('ClickNote')
+    setView(true)
+  }
+  const toChangeView = () => {setView(false)}
+
   return (
     
     <div style={styles.div}>
@@ -71,9 +94,15 @@ export default function Note({note}){
     </div>
  </div>
     
-    {user.token.length > 1 &&
+    {user.token.length > 10&&view!=true &&
+      <button style={styles.button} type="submit" className="btn btn-primary btn-sm" onClick={handleClick}>Edit</button>
+    }
+    {view === true &&
 
-   <ChangeBar note={note}/>
+ <ChangeBar 
+ note={note}
+ toChangeView = {toChangeView}
+  />
     }
     </div>
   )

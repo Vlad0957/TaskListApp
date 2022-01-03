@@ -88,7 +88,7 @@ const styles = {
   }
 }
 
-export default function ChangeBar({note}){
+export default function ChangeBar({note, toChangeView}){
 const dispatch = useDispatch()
 const user = useSelector(state=>state.user)
 function handleClick(e){
@@ -107,6 +107,7 @@ dispatch(changeTask({
     id: note.id
   }
 }))
+toChangeView()
 }
 
 return (
