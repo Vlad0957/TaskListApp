@@ -2,6 +2,7 @@ import React, {useEffect, useState, useMemo} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import {fetchTasks, clearState} from '../redux/actions/actions'
 import Notes from './Notes'
+import Alert from './Alert'
 
 
 
@@ -79,10 +80,10 @@ const styles = {
 export default function Page(){
 
   const dispatch = useDispatch()
-  const state = useSelector((state) => state)
-  
+  const answer = useSelector((state) => state.answer)
   useEffect(()=>{
-   
+    
+    console.log(answer, 'answer')
       console.log('YEES')
     for(let i =1; i<50; i++){
       
@@ -102,6 +103,10 @@ export default function Page(){
   }
   return (
 <div>
+{ answer.status !=='' &&
+
+<Alert />
+}
     <div   style={styles.divTwo} >
     {currentPage!=undefined &&
       <Notes page={currentPage} />

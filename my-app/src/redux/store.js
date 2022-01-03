@@ -15,10 +15,15 @@ const preloadedState = {
     email:'',
     token: '',
   },
+  currentPage: {
+    field: '',
+    direct: '',
+    pageNum: '',
+  },
   answer: {
     status: '',
     message: {
-      
+
     }
     
   },

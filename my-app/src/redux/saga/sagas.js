@@ -1,6 +1,6 @@
 import {takeEvery, put, call} from 'redux-saga/effects'
 import {REQUEST_TASKS, ADD_TASK, SORT_BY_PARAM, USER_DATA, CHANGE_TASK} from '../actions/type';
-import { addFetchTasks, sortByParam, authUserToken } from '../actions/actions';
+import { addFetchTasks, sortByParam, authUserToken, addAnswer } from '../actions/actions';
 
 
 
@@ -9,29 +9,46 @@ export default function* sagaWatcher(){
   yield takeEvery(ADD_TASK, sagaWorkerAddTask)
   yield takeEvery(SORT_BY_PARAM, sagaWorkerSortField)
   yield takeEvery(USER_DATA, sagaWorkerUserAuth)
-  yield takeEvery(CHANGE_TASK, sagaWorkerchangeTask)
+  yield takeEvery(CHANGE_TASK, sagaWorkerChangeTask)
 }
 
 
-function* sagaWorkerchangeTask(data){
+function* sagaWorkerChangeTask(data){
 console.log(data, 'dataChange')
-yield call(changeTask, data)
+const response = yield call(changeTask, data)
+console.log(response, 'CHANGE_TASKS')
+yield put(addAnswer(
+  {
+    status: response.status,
+    message: 'Successfully edited'
+  }
+))
 }
 
 function* sagaWorker(data){
   console.log(data.payload.i)
 const payload =  yield call(fetchTasks, data)
-yield put(addFetchTasks({
-  payload, num: data.payload.i
-}))
+console.log(payload, 'FETCH_TASKS')
+if(payload.message.tasks.length>0){
+  yield put(addFetchTasks({
+    payload, num: data.payload.i
+  }))
+
+}
 }
 
 function* sagaWorkerAddTask(data){
   console.log(data.payload.text)
 
   const response = yield call(createNewTask, data)
-  console.log(response)
-  
+  console.log(response, 'ADD-TASK_NEW')
+  yield put(addAnswer(
+    {
+      message: 'Task created',
+      status: response.status,
+    }
+  ))
+
   
   }
 
@@ -39,19 +56,31 @@ function* sagaWorkerAddTask(data){
     console.log(data.payload)
     const payload = yield call(sortByField, data)
   console.log(payload)
-  yield put(addFetchTasks({
-    payload, num: data.payload.num
-  }))
+  if(payload.message.tasks.length>0){
+    yield put(addFetchTasks({
+      payload, num: data.payload.num
+    }))
+
+  }
 
   }
 
   function* sagaWorkerUserAuth(data){
     console.log(data.payload, 'useAuth')
     const response = yield call(userAuthor, data)
-    console.log(response, 'responseToken')
-    yield put(authUserToken({
+    console.log(response, 'responseToken!!!!')
+    if(response.status == 'ok'){
+      yield put(authUserToken({
       payload: response
     }))
+    } else if(response.status == 'error') {
+      yield put(addAnswer(
+        {status: response.status,
+          message: response.message.password,
+        }
+      ))
+    }
+    
   }
   async function changeTask(data){
     let formData = new FormData()
@@ -62,8 +91,9 @@ function* sagaWorkerAddTask(data){
       method: 'POST',
       body: formData
     })
-    console.log(response.json())
-
+   
+    const res = response.json()
+    return res
   }
   async function userAuthor(data){
 

@@ -93,6 +93,8 @@ const dispatch = useDispatch()
       username: e.target.username.value,
       password: e.target.password.value
     }))
+    e.target.username.value = ''
+      e.target.password.value = ''
   }
 
   return (

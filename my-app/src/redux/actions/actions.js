@@ -1,4 +1,4 @@
-import {ADD_TASK, REQUEST_TASKS, FETCH_TASKS, SORT_BY_PARAM, CLEAR_STATE, USER_DATA, USER_TOKEN, DELETE_USER, CHANGE_TASK, ADD_ANSWER} from './type'
+import {ADD_TASK, REQUEST_TASKS, FETCH_TASKS, SORT_BY_PARAM, CLEAR_STATE, USER_DATA, USER_TOKEN, DELETE_USER, CHANGE_TASK, ADD_ANSWER, HIDE_ALERT, SORT_PARAM_ADD} from './type'
 
 export const addNewTask = (payload) =>({
 payload,
@@ -65,6 +65,18 @@ return {
   payload
 }
 }
+export const hideAlert = () => {
+  return {
+    type: HIDE_ALERT,
+  }
+  }
+export const sortParamAdd = (payload) => {
+  return{
+    type: SORT_PARAM_ADD,
+    payload,
+  }
+}
+
 
 
 

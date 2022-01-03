@@ -1,4 +1,4 @@
-import {FETCH_TASKS, CLEAR_STATE, USER_TOKEN, DELETE_USER, ADD_ANSWER} from './actions/type'
+import {FETCH_TASKS, CLEAR_STATE, USER_TOKEN, DELETE_USER, ADD_ANSWER, HIDE_ALERT, SORT_PARAM_ADD} from './actions/type'
 const initialState = {}
 const reducerTask = (state = initialState, action) =>{
 
@@ -37,8 +37,23 @@ const reducerTask = (state = initialState, action) =>{
       case ADD_ANSWER:
       return {
           ...state, answer: {
-            status: action.payload.payload.status,
-            message: action.payload.payload.message,
+            status: action.payload.status,
+            message: action.payload.message,
+          }
+        }
+      case HIDE_ALERT:
+      return {
+        ...state, answer: {
+          status: '',
+          message: '',
+        }
+      }
+      case SORT_PARAM_ADD:
+        return {
+          ...state, currentPage: {
+            field: action.payload.field,
+            direct: action.payload.direct,
+            pageNum: '',
           }
         }
         

@@ -1,6 +1,6 @@
 import React from 'react'
 import {useSelector, useDispatch} from 'react-redux'
-import {sortByParam, clearState} from '../redux/actions/actions'
+import {sortByParam, clearState, sortParamAdd} from '../redux/actions/actions'
 
 
 const styles = {
@@ -85,6 +85,10 @@ function handleClickSort(e){
 
   console.log('click', e.target.field.value)
   console.log('click', e.target.direction.value)
+  dispatch(sortParamAdd({
+    field: e.target.field.value,
+    direct: e.target.direction.value
+  }))
   for(let i =1; i<50; i++){
   
     dispatch(sortByParam({
