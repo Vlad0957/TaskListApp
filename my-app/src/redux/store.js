@@ -1,9 +1,8 @@
-import {createStore, applyMiddleware} from 'redux'
-import {composeWithDevTools} from 'redux-devtools-extension'
-import createSagaMiddleware from 'redux-saga'
-import sagaWatcher from '../redux/saga/sagas'
-import reducerTask from './reducer'
-
+import { createStore, applyMiddleware } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import createSagaMiddleware from 'redux-saga';
+import sagaWatcher from './saga/sagas';
+import reducerTask from './reducer';
 
 const preloadedState = {
   page: [{
@@ -13,7 +12,7 @@ const preloadedState = {
   }],
   user: {
     name: '',
-    email:'',
+    email: '',
     token: '',
   },
   currentPage: {
@@ -25,18 +24,18 @@ const preloadedState = {
     status: '',
     message: {
 
-    }
-    
+    },
+
   },
 
-  loading: false
-}
-const sagaMiddleware = createSagaMiddleware()
+  loading: false,
+};
+const sagaMiddleware = createSagaMiddleware();
 const mainStore = createStore(
   reducerTask,
-  preloadedState, 
+  preloadedState,
   composeWithDevTools(applyMiddleware(sagaMiddleware)),
-  
-)
-sagaMiddleware.run(sagaWatcher)
-export default mainStore
+
+);
+sagaMiddleware.run(sagaWatcher);
+export default mainStore;

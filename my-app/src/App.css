@@ -1,0 +1,12 @@
+.Container {
+  font-family: 'Josefin Sans', serif;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #D8DEE9;
+}
+
+.backGround {
+  z-index: 1;
+}
