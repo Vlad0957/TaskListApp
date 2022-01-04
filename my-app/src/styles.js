@@ -345,7 +345,24 @@ export const styleApp = {
     height: 350,
     width: 340,
     border: 'solid black 1px',
-  }
+  }, 
+  button: {
+    height: 30,
+    width: 70,
+    border: 'solid black 1px',
+    borderRadius: 10,
+    overflow: 'auto',
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 5,
+    margin: 5,
+    fontSize: 12,
+    fontWeight: 'bold',
+    fontColor: '#E5E9F0',
+  },
+
 }
 
 export const styleHeaderBar = {

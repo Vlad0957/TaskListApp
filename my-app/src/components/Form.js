@@ -5,7 +5,7 @@ import {styleForm} from '../styles.js'
 
 
 
-export default function Form() {
+export default function Form({changeViewForm}) {
   const styles = styleForm
   const dispatch = useDispatch();
 
@@ -30,6 +30,10 @@ export default function Form() {
     e.target.userName.value = '';
     e.target.newEmail.value = '';
     e.target.newTask.value = '';
+    
+    setTimeout(()=>{
+      changeViewForm()
+    }, 500)
   }
   return (
     <form style={styles.form} onSubmit={handleClick}>

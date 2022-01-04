@@ -1,4 +1,5 @@
 import { takeEvery, put, call } from 'redux-saga/effects';
+
 import {
   REQUEST_TASKS, ADD_TASK, SORT_BY_PARAM, USER_DATA, CHANGE_TASK,
 } from '../actions/type';
