@@ -1,6 +1,6 @@
-import React, {useEffect, useState, useMemo} from 'react'
+import React, {useEffect, useState} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
-import {fetchTasks, clearState, sortByParam, sortParamAdd} from '../redux/actions/actions'
+import {clearState, sortByParam, sortParamAdd} from '../redux/actions/actions'
 import Notes from './Notes'
 import Alert from './Alert'
 
@@ -30,7 +30,7 @@ const styles = {
       width: 400,
       border: 'solid black 1px',
       borderRadius: 10,
-      overflow: 'auto',
+      // overflow: 'auto',
       display: 'flex',
       flexDirection: 'row',
       alignItems: 'start',

@@ -7,11 +7,11 @@ import ChangeBar from '../components/changeForm'
 
 const styles = {
   div: {
-    height: 140,
-      width: 370,
+    height: 150,
+      width: 380,
     border: 'solid black 1px',
     borderRadius: 10,
-    overflow: 'auto',
+    // overflow: 'auto',
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'start',
@@ -97,7 +97,7 @@ const [view, setView] = useState(false)
     {user.token.length > 10 && view!=true &&
       <button style={styles.button} type="submit" className="btn btn-primary btn-sm" onClick={handleClick}>Edit</button>
     }
-    {view === true &&
+    {view === true && user.token.length > 10 &&
 
  <ChangeBar 
  note={note}

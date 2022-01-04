@@ -1,6 +1,7 @@
 import {takeEvery, put, call} from 'redux-saga/effects'
 import {REQUEST_TASKS, ADD_TASK, SORT_BY_PARAM, USER_DATA, CHANGE_TASK} from '../actions/type';
 import { addFetchTasks, authUserToken, addAnswer } from '../actions/actions';
+const URL = 'https://uxcandy.com/~shapoval/test-task-backend/v2'
 
 
 
@@ -87,7 +88,7 @@ function* sagaWorkerAddTask(data){
     formData.append('token',  data.payload.payload.token)
     formData.append('text',  data.payload.payload.text)
     formData.append('status',  data.payload.payload.status)
-    const response = await fetch(`https://uxcandy.com/~shapoval/test-task-backend/v2/edit/${data.payload.payload.id}?developer=Vlad`, {
+    const response = await fetch(`${URL}/edit/${data.payload.payload.id}?developer=Vlad`, {
       method: 'POST',
       body: formData
     })
@@ -100,11 +101,11 @@ function* sagaWorkerAddTask(data){
     let formData = new FormData()
     formData.append('username',  data.payload.username)
     formData.append('password',  data.payload.password)
-    const response = await fetch('https://uxcandy.com/~shapoval/test-task-backend/v2/login?developer=Vlad', {
+    const response = await fetch(`${URL}/login?developer=Vlad`, {
       method: 'POST',
       body: formData
     })
-    // console.log(response.json())
+   
     const res = response.json()
   
     return res
@@ -112,14 +113,14 @@ function* sagaWorkerAddTask(data){
 
   async function sortByField(data){
     console.log('SortField request', data.payload)
-    const response = await fetch(`https://uxcandy.com/~shapoval/test-task-backend/v2/?developer=Vlad&sort_field=${data.payload.value.field}&sort_direction=${data.payload.value.direction}&page=${data.payload.num}`)
+    const response = await fetch(`${URL}/?developer=Vlad&sort_field=${data.payload.value.field}&sort_direction=${data.payload.value.direction}&page=${data.payload.num}`)
   let res = response.json()
     return res
   }
 
 async function fetchTasks(num){
   console.log('Fetch request', num.payload.i)
-  const response = await fetch(`https://uxcandy.com/~shapoval/test-task-backend/v2/?developer=Vlad&page=${num.payload.i}`)
+  const response = await fetch(`${URL}/?developer=Vlad&page=${num.payload.i}`)
   let res = response.json()
   console.log(res, 'RESSSS!!!!!')
   return res
@@ -132,7 +133,7 @@ async function createNewTask(payload){
   form.append("email", payload.payload.email)
   form.append("text", payload.payload.text)
   console.log(form)
-  const response = await fetch('https://uxcandy.com/~shapoval/test-task-backend/v2/create?developer=Vlad', {
+  const response = await fetch(`${URL}/create?developer=Vlad`, {
     method: 'POST',
     body: form,
   });
