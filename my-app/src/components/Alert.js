@@ -36,7 +36,7 @@ export default function Alert() {
   }
   return (
 
-    <div className="modal" role="alert" style={styles.div}>
+    <div className="modal"  role="alert" style={styles.div}>
       <span>{answer}</span>
       <button style={styles.button} onClick={handleClick} type="button" className="btn btn-secondary btn-sm">Ok</button>
     </div>
