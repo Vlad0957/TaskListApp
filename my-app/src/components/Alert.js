@@ -1,6 +1,6 @@
 import { React, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { hideAlert, clearState, sortByParam } from '../redux/actions/actions';
+import { hideAlert, sortByParam } from '../redux/actions/actions';
 import { styleAlert } from '../styles.js';
 
 
@@ -19,10 +19,6 @@ export default function Alert() {
   }
   function handleClick(e) {
     e.preventDefault();
-
-    dispatch(clearState({
-
-    }));
 
     dispatch(sortByParam({
       value: {

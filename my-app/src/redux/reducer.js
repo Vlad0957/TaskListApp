@@ -1,19 +1,10 @@
 import {
-  FETCH_TASKS, CLEAR_STATE, USER_TOKEN, DELETE_USER, ADD_ANSWER, HIDE_ALERT, SORT_PARAM_ADD,
+  FETCH_TASKS, USER_TOKEN, DELETE_USER, ADD_ANSWER, HIDE_ALERT, SORT_PARAM_ADD,
 } from './actions/type';
 
 const initialState = {};
 const reducerTask = (state = initialState, action) => {
   switch (action.type) {
-    case CLEAR_STATE:
-      return {
-        ...state,
-        page: {
-          num: '',
-          tasks: [],
-        },
-
-      };
     case FETCH_TASKS:
       return {
         ...state,

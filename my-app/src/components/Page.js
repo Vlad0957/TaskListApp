@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { clearState, sortByParam, sortParamAdd } from '../redux/actions/actions';
+import {sortByParam, sortParamAdd } from '../redux/actions/actions';
 import Notes from './Notes';
 import Alert from './Alert';
 import {stylePage} from '../styles.js'
@@ -35,7 +35,7 @@ export default function Page() {
 
   const totalCount = useSelector((state) => state.page.total_count);
 
-  const pages = useSelector((state) => state.page);
+  const pageTasks = useSelector((state) => state.page);
   const pageCount = Math.ceil(totalCount / tasksPerPage);
 
   for (let j = 1; j <= pageCount; j++) {
@@ -45,7 +45,6 @@ export default function Page() {
   const paginate = (num) => {
     setPage(num);
   };
-  const currentPage = pages;
   return (
     <div>
       { answer.status !== ''
@@ -53,7 +52,7 @@ export default function Page() {
       && <Alert />}
       <div style={styles.divTwo}>
 
-        <Notes page={currentPage} />
+        <Notes page={pageTasks} />
 
       </div>
       <div style={{ width: 60 }}>

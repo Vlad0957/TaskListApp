@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { sortByParam, clearState, sortParamAdd } from '../redux/actions/actions';
+import { sortByParam, sortParamAdd } from '../redux/actions/actions';
 import {styleSortBar} from '../styles'
 
 
@@ -11,10 +11,7 @@ export default function SortBar() {
   const state = useSelector((state) => state);
   function handleClickSort(e) {
     e.preventDefault();
-    dispatch(clearState({
-
-    }));
-
+  
     dispatch(sortParamAdd({
       field: e.target.field.value,
       direct: e.target.direction.value,
