@@ -1,16 +1,10 @@
 import {
-  ADD_TASK, REQUEST_TASKS, FETCH_TASKS, SORT_BY_PARAM, USER_DATA, USER_TOKEN, DELETE_USER, CHANGE_TASK, ADD_ANSWER, HIDE_ALERT, SORT_PARAM_ADD,
+  ADD_TASK, FETCH_TASKS, SORT_BY_PARAM, USER_DATA, USER_TOKEN, DELETE_USER, CHANGE_TASK, ADD_ANSWER, HIDE_ALERT, SORT_PARAM_ADD,
 } from './type';
 
 export const addNewTask = (payload) => ({
   payload,
   type: ADD_TASK,
-
-});
-
-export const fetchTasks = (payload) => ({
-  type: REQUEST_TASKS,
-  payload,
 
 });
 

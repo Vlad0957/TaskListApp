@@ -9,20 +9,17 @@ export default function ChangeBar({ note, toChangeView }) {
   const styles = styleChangeForm
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
+  const state = useSelector((state) => state);
   function handleClick(e) {
     e.preventDefault();
-    console.log({
-      text: e.target.changeText.value,
-      status: e.target.status.value,
-      token: user.token,
-      id: note.id,
-    });
+
     dispatch(changeTask({
       payload: {
         text: e.target.changeText.value,
         status: e.target.status.value,
         token: user.token,
         id: note.id,
+        URL: state.URL
       },
     }));
     toChangeView();

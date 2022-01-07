@@ -27,7 +27,7 @@ const preloadedState = {
     },
 
   },
-  // URL: 'https://uxcandy.com/~shapoval/test-task-backend/v2',
+  URL: 'https://uxcandy.com/~shapoval/test-task-backend/v2',
   loading: false,
 };
 const sagaMiddleware = createSagaMiddleware();

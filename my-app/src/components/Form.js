@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addNewTask, addAnswer } from '../redux/actions/actions';
 import {styleForm} from '../styles.js'
 
@@ -8,6 +8,7 @@ import {styleForm} from '../styles.js'
 export default function Form({changeViewForm}) {
   const styles = styleForm
   const dispatch = useDispatch();
+  const state = useSelector(state => state)
 
   function handleClick(e) {
     e.preventDefault();
@@ -25,6 +26,7 @@ export default function Form({changeViewForm}) {
         email: e.target.newEmail.value,
         text: e.target.newTask.value,
         status: 0,
+        URL: state.URL
       }));
     }
     e.target.userName.value = '';

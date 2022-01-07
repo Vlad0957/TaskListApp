@@ -26,6 +26,7 @@ export default function Alert() {
         direction: curentSort.direct,
       },
       num: thisPage,
+      URL: state.URL
     }));
 
     dispatch(hideAlert());

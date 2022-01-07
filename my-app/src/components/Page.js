@@ -27,6 +27,7 @@ export default function Page() {
         direction: state.currentPage.direct,
       },
       num: page,
+      URL: state.URL
     }));
   }, [page]);
 

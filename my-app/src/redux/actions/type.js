@@ -1,6 +1,5 @@
 export const ADD_TASK = 'ADD_TASK';
 export const FETCH_TASKS = 'FETCH_TASKS';
-export const REQUEST_TASKS = 'REQUEST_TASKS';
 export const SORT_BY_PARAM = 'SORT_BY_PARAM';
 export const SORT_PARAM_ADD = 'SORT_PARAM_ADD';
 export const USER_DATA = 'USER_DATA';

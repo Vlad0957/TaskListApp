@@ -25,6 +25,7 @@ export default function SortBar() {
         direction: e.target.direction.value,
       },
       num: state.currentPage.pageNum,
+      URL: state.URL
     }));
   }
   return (
