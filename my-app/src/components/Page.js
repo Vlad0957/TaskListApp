@@ -33,7 +33,7 @@ export default function Page() {
   const state = useSelector((state) => state);
   const answer = useSelector((state) => state.answer);
 
-  const totalCount = useSelector((state) => state.page[0].total_count);
+  const totalCount = useSelector((state) => state.page.total_count);
 
   const pages = useSelector((state) => state.page);
   const pageCount = Math.ceil(totalCount / tasksPerPage);
@@ -45,7 +45,7 @@ export default function Page() {
   const paginate = (num) => {
     setPage(num);
   };
-  const currentPage = pages[0];
+  const currentPage = pages;
   return (
     <div>
       { answer.status !== ''

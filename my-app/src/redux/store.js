@@ -5,11 +5,11 @@ import sagaWatcher from './saga/sagas';
 import reducerTask from './reducer';
 
 const preloadedState = {
-  page: [{
+  page: {
     num: '',
     tasks: [],
     total_count: '',
-  }],
+  },
   user: {
     name: '',
     email: '',
