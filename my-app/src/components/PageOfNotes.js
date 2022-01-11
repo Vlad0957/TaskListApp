@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import {sortByParam, sortParamAdd } from '../redux/actions/actions';
+import { sortByParam, sortParamAdd } from '../redux/actions/actions';
 import Notes from './Notes';
 import Alert from './Alert';
-import {stylePage} from '../styles.js'
-
-
+import { stylePage } from '../styles.js';
 
 export default function Page() {
-  const styles = stylePage
+  const styles = stylePage;
   const dispatch = useDispatch();
   const [page, setPage] = useState(1);
   const tasksPerPage = 3;
@@ -27,11 +25,13 @@ export default function Page() {
         direction: state.currentPage.direct,
       },
       num: page,
-      URL: state.URL
+      URL: state.URL,
     }));
+    
   }, [page]);
 
   const state = useSelector((state) => state);
+  
   const answer = useSelector((state) => state.answer);
 
   const totalCount = useSelector((state) => state.page.total_count);

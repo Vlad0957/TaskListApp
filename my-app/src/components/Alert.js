@@ -13,7 +13,7 @@ export default function Alert() {
   const dispatch = useDispatch();
   
   const [thisPage, setThisPage] = useState(state.currentPage.pageNum);
-  if (answer == 'Task created' && state.currentPage.pageNum == Math.ceil(state.page[0].total_count / 3) && state.page[0].tasks.length == 3) {
+  if (answer === 'Task created' && state.currentPage.pageNum === Math.ceil(state.page.total_count / 3) && state.page.tasks.length === 3) {
     
     setThisPage(++state.currentPage.pageNum);
   }

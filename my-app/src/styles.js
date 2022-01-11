@@ -66,66 +66,66 @@ export const stylePage = {
   a: {
     fontSize: 8,
   },
-}
+};
 
 export const styleNotes = {
 
-}
+};
 
 export const styleAlert = {
   divPage: {
-    
-      display: 'flex',
-        // flexDirection: 'column',
-        // position: 'absolut',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        // left: 200,
-        width: 1400,
-        height: 1000,
-        fontSize: 15,
-        // left:25%,
-        margin: 10,
-        paddingLeft: 10,
-        paddingRight: 10,
-        // position: 'center',
-          left: '0%',
-          top: '0%',
-          // marginLeft: -300,
-          // marginTop: -75,
-        background: 'Azure',
-        // border: 1px solid gray,
-        // z-index:1,
-        // box-shadow: 0px 0px 7px,
-        borderRadius:10,
-        opacity: 0.8,
-        
+
+    display: 'flex',
+    // flexDirection: 'column',
+    // position: 'absolut',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    // left: 200,
+    width: 1400,
+    height: 1000,
+    fontSize: 15,
+    // left:25%,
+    margin: 10,
+    paddingLeft: 10,
+    paddingRight: 10,
+    // position: 'center',
+    left: '0%',
+    top: '0%',
+    // marginLeft: -300,
+    // marginTop: -75,
+    background: 'Azure',
+    // border: 1px solid gray,
+    // z-index:1,
+    // box-shadow: 0px 0px 7px,
+    borderRadius: 10,
+    opacity: 0.8,
+
   },
 
   div: {
-display: 'flex',
-  // flexDirection: 'column',
-  // position: 'fixed',
-  justifyContent: 'center',
-  alignItems: 'center',
+    display: 'flex',
+    // flexDirection: 'column',
+    // position: 'fixed',
+    justifyContent: 'center',
+    alignItems: 'center',
 
-  width: '50vw',
-  height: '40vh',
-  fontSize: 15,
- 
-  margin: 10,
-  paddingLeft: 10,
-  paddingRight: 10,
-  
+    width: '50vw',
+    height: '40vh',
+    fontSize: 15,
+
+    margin: 10,
+    paddingLeft: 10,
+    paddingRight: 10,
+
     left: '25%',
     top: '0%',
-  
-  background: 'lightblue',
-  border: '1px solid gray',
-  // z-index:1,
-  // box-shadow: 0px 0px 7px,
-  borderRadius: 20,
-  opacity: 0.8,
+
+    background: 'lightblue',
+    border: '1px solid gray',
+    // z-index:1,
+    // box-shadow: 0px 0px 7px,
+    borderRadius: 20,
+    opacity: 0.8,
   },
   button: {
     height: 40,
@@ -144,8 +144,6 @@ display: 'flex',
     fontWeight: 'bold',
     fontColor: '#E5E9F0',
   },
-  
-
 
 };
 
@@ -336,33 +334,32 @@ export const styleApp = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    justifyContent:'center',
+    justifyContent: 'center',
     padding: 5,
     margin: 5,
     fontSize: 24,
     fontWeight: 'bold',
     fontColor: '#E5E9F0',
-    background: 'Beige'
+    background: 'Beige',
 
   },
   divTwo: {
-    
-      height: 700,
-      width: 880,
-      // border: 'solid black 1px',
-      borderRadius: 10,
-      // overflow: 'auto',
-      display: 'flex',
-      flexDirection: 'row',
-      alignItems: 'start',
-      justifyContent:'center',
-      padding: 5,
-      margin: 5,
-      fontSize: 24,
-      fontWeight: 'bold',
-      fontColor: '#E5E9F0',
-  
-    
+
+    height: 700,
+    width: 880,
+    // border: 'solid black 1px',
+    borderRadius: 10,
+    // overflow: 'auto',
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'start',
+    justifyContent: 'center',
+    padding: 5,
+    margin: 5,
+    fontSize: 24,
+    fontWeight: 'bold',
+    fontColor: '#E5E9F0',
+
   },
   span: {
     margin: 5,
@@ -374,7 +371,7 @@ export const styleApp = {
     height: 350,
     width: 340,
     border: 'solid black 1px',
-  }, 
+  },
   button: {
     height: 30,
     width: 70,
@@ -392,7 +389,7 @@ export const styleApp = {
     fontColor: '#E5E9F0',
   },
 
-}
+};
 
 export const styleHeaderBar = {
   div: {
@@ -410,7 +407,6 @@ export const styleHeaderBar = {
     fontSize: 24,
     fontWeight: 'bold',
     fontColor: '#E5E9F0',
-    
 
   },
   span: {
@@ -470,7 +466,7 @@ export const styleHeaderBar = {
 export const styleNote = {
   div: {
     height: 150,
-      width: 580,
+    width: 580,
     border: 'solid black 1px',
     borderRadius: 10,
     overflow: 'auto',
@@ -478,7 +474,7 @@ export const styleNote = {
     flexDirection: 'row',
     alignItems: 'start',
     justifyContent: 'space-between',
-   
+
     padding: 5,
     margin: 5,
     fontSize: 24,
@@ -487,23 +483,22 @@ export const styleNote = {
 
   },
   divTwo: {
-    
-      // height: 140,
-      width: 450,
-      // border: 'solid black 1px',
-      borderRadius: 10,
-      overflow: 'auto',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'start',
-      justifyContent:'start',
-      padding: 5,
-      margin: 10,
-      fontSize: 15,
-      fontWeight: 'bold',
-      fontColor: '#E5E9F0',
-  
-    
+
+    // height: 140,
+    width: 450,
+    // border: 'solid black 1px',
+    borderRadius: 10,
+    overflow: 'auto',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'start',
+    justifyContent: 'start',
+    padding: 5,
+    margin: 10,
+    fontSize: 15,
+    fontWeight: 'bold',
+    fontColor: '#E5E9F0',
+
   },
   span: {
     margin: 5,
@@ -532,7 +527,7 @@ export const styleNote = {
     fontWeight: 'bold',
     fontColor: '#E5E9F0',
   },
-}
+};
 export const styleSortBar = {
   div: {
     height: 184,

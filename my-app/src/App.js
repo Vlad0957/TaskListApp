@@ -1,5 +1,5 @@
 import { React, useState } from 'react';
-import Page from './components/Page';
+import Page from './components/PageOfNotes';
 import Form from './components/Form';
 import SortBar from './components/SortBar';
 import HeaderBar from './components/HeaderBar';
