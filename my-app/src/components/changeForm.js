@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { changeTask } from '../redux/actions/actions';
+import { changeTask } from '../redux/actions/actionsTasks';
 import {styleChangeForm} from '../styles.js'
 
 

@@ -2,7 +2,7 @@ import { takeEvery, call, put } from 'redux-saga/effects';
 import {
   ADD_TASK, SORT_BY_PARAM, CHANGE_TASK,
 } from '../actions/type';
-import { addFetchTasks, addAnswer } from '../actions/actions';
+import { addFetchTasks, addAnswer } from '../actions/actionsTasks';
 
 export function* tasksSagaWatcher1() {
   yield takeEvery(ADD_TASK, sagaWorkerAddTask);

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { sortByParam, sortParamAdd } from '../redux/actions/actions';
+import { sortByParam, sortParamAdd } from '../redux/actions/actionsTasks';
 import {styleSortBar} from '../styles'
 
 

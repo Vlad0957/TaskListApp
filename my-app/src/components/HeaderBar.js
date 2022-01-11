@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteUser } from '../redux/actions/actions';
+import { deleteUser } from '../redux/actions/actionsUser';
 import UserAuth from './UserAuth';
 import {styleHeaderBar} from '../styles'
 

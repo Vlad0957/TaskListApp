@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addNewTask, addAnswer } from '../redux/actions/actions';
+import { addNewTask, addAnswer } from '../redux/actions/actionsTasks';
 import {styleForm} from '../styles.js'
 
 

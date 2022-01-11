@@ -1,6 +1,6 @@
 import { React, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { hideAlert, sortByParam } from '../redux/actions/actions';
+import { hideAlert, sortByParam } from '../redux/actions/actionsTasks';
 import { styleAlert } from '../styles.js';
 
 

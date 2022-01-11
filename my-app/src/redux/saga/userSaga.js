@@ -1,6 +1,7 @@
 import { takeEvery, call, put } from "redux-saga/effects";
 import { USER_DATA } from '../actions/type'
-import { addAnswer, authUserToken } from '../actions/actions';
+import { authUserToken } from '../actions/actionsUser';
+import { addAnswer } from '../actions/actionsTasks';
 
 export function* userSagaWatcher(){
   yield takeEvery(USER_DATA, sagaWorkerUserAuth)

@@ -1,5 +1,5 @@
 import {
-  ADD_TASK, FETCH_TASKS, SORT_BY_PARAM, USER_DATA, USER_TOKEN, DELETE_USER, CHANGE_TASK, ADD_ANSWER, HIDE_ALERT, SORT_PARAM_ADD,
+  ADD_TASK, FETCH_TASKS, SORT_BY_PARAM, CHANGE_TASK, ADD_ANSWER, HIDE_ALERT, SORT_PARAM_ADD,
 } from './type';
 
 export const addNewTask = (payload) => ({
@@ -17,21 +17,6 @@ export const addFetchTasks = (payload) => ({
 export const sortByParam = (payload) => ({
   payload,
   type: SORT_BY_PARAM,
-});
-
-export const userAuth = (payload) => ({
-  payload,
-  type: USER_DATA,
-});
-
-export const authUserToken = (payload) => ({
-  payload,
-  type: USER_TOKEN,
-});
-
-export const deleteUser = () => ({
-
-  type: DELETE_USER,
 });
 
 export const changeTask = (payload) => ({
