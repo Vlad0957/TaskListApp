@@ -8,14 +8,11 @@ export const addNewTask = (payload) => ({
 
 });
 
-export const addFetchTasks = (payload) => {
-  
-  return {
-    payload,
-    type: FETCH_TASKS,
+export const addFetchTasks = (payload) => ({
+  payload,
+  type: FETCH_TASKS,
 
-  };
-};
+});
 
 export const sortByParam = (payload) => ({
   payload,
@@ -26,25 +23,31 @@ export const userAuth = (payload) => ({
   payload,
   type: USER_DATA,
 });
+
 export const authUserToken = (payload) => ({
   payload,
   type: USER_TOKEN,
 });
+
 export const deleteUser = () => ({
 
   type: DELETE_USER,
 });
+
 export const changeTask = (payload) => ({
   type: CHANGE_TASK,
   payload,
 });
+
 export const addAnswer = (payload) => ({
   type: ADD_ANSWER,
   payload,
 });
+
 export const hideAlert = () => ({
   type: HIDE_ALERT,
 });
+
 export const sortParamAdd = (payload) => ({
   type: SORT_PARAM_ADD,
   payload,
