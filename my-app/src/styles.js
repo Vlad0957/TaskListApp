@@ -1,21 +1,5 @@
 export const stylePage = {
-  div: {
-    height: 450,
-    width: 1400,
-    border: 'solid black 1px',
-    borderRadius: 10,
-    overflow: 'auto',
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'start',
-    justifyContent: 'center',
-    padding: 5,
-    margin: 5,
-    fontSize: 24,
-    fontWeight: 'bold',
-    fontColor: '#E5E9F0',
 
-  },
   divTwo: {
 
     height: 480,
@@ -47,7 +31,6 @@ export const stylePage = {
     // justifyContent:'center',
     padding: 5,
     margin: 5,
-    // fontSize: ,
     fontWeight: 'bold',
     fontColor: '#E5E9F0',
 
@@ -73,34 +56,6 @@ export const styleNotes = {
 };
 
 export const styleAlert = {
-  divPage: {
-
-    display: 'flex',
-    // flexDirection: 'column',
-    // position: 'absolut',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    // left: 200,
-    width: 1400,
-    height: 1000,
-    fontSize: 15,
-    // left:25%,
-    margin: 10,
-    paddingLeft: 10,
-    paddingRight: 10,
-    // position: 'center',
-    left: '0%',
-    top: '0%',
-    // marginLeft: -300,
-    // marginTop: -75,
-    background: 'Azure',
-    // border: 1px solid gray,
-    // z-index:1,
-    // box-shadow: 0px 0px 7px,
-    borderRadius: 10,
-    opacity: 0.8,
-
-  },
 
   div: {
     display: 'flex',
@@ -108,22 +63,16 @@ export const styleAlert = {
     // position: 'fixed',
     justifyContent: 'center',
     alignItems: 'center',
-
     width: '50vw',
     height: '40vh',
     fontSize: 15,
-
     margin: 10,
     paddingLeft: 10,
     paddingRight: 10,
-
     left: '25%',
     top: '0%',
-
     background: 'lightblue',
     border: '1px solid gray',
-    // z-index:1,
-    // box-shadow: 0px 0px 7px,
     borderRadius: 20,
     opacity: 0.8,
   },
@@ -148,43 +97,7 @@ export const styleAlert = {
 };
 
 export const styleChangeForm = {
-  div: {
-    height: 184,
-    width: 340,
-    border: 'solid black 1px',
-    borderRadius: 10,
-    overflow: 'auto',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'start',
-    padding: 5,
-    margin: 5,
-    fontSize: 24,
-    fontWeight: 'bold',
-    fontColor: '#E5E9F0',
 
-  },
-  span: {
-    margin: 5,
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#FFFFFF',
-  },
-  form: {
-    height: 40,
-    width: 280,
-    // border: 'solid black 1px',
-    borderRadius: 10,
-    // overflow: 'auto',
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    padding: 5,
-    margin: 5,
-    fontSize: 12,
-    fontWeight: 'bold',
-    fontColor: '#E5E9F0',
-  },
   select: {
     height: 30,
     width: 100,
@@ -233,28 +146,7 @@ export const styleChangeForm = {
 };
 
 export const styleForm = {
-  div: {
-    height: 184,
-    width: 340,
-    border: 'solid black 1px',
-    borderRadius: 10,
-    overflow: 'auto',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'start',
-    padding: 5,
-    margin: 5,
-    fontSize: 24,
-    fontWeight: 'bold',
-    fontColor: '#E5E9F0',
 
-  },
-  span: {
-    margin: 5,
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#FFFFFF',
-  },
   label: {
     margin: 5,
     fontSize: 12,
@@ -361,17 +253,7 @@ export const styleApp = {
     fontColor: '#E5E9F0',
 
   },
-  span: {
-    margin: 5,
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#FFFFFF',
-  },
-  form: {
-    height: 350,
-    width: 340,
-    border: 'solid black 1px',
-  },
+
   button: {
     height: 30,
     width: 70,
@@ -409,58 +291,7 @@ export const styleHeaderBar = {
     fontColor: '#E5E9F0',
 
   },
-  span: {
-    margin: 5,
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#FFFFFF',
-  },
-  form: {
-    height: 100,
-    width: 650,
-    border: 'solid black 1px',
-    borderRadius: 10,
-    overflow: 'auto',
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 5,
-    margin: 5,
-    fontSize: 12,
-    fontWeight: 'bold',
-    fontColor: '#E5E9F0',
-    background: 'green',
-  },
-  input: {
-    height: 30,
-    width: 100,
-    borderRadius: 8,
-    overflow: 'auto',
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'start',
-    padding: 5,
-    margin: 5,
-    fontSize: 12,
-    fontWeight: 'bold',
-    fontColor: '#E5E9F0',
-  },
-  button: {
-    height: 30,
-    width: 60,
-    border: 'solid black 1px',
-    borderRadius: 10,
-    overflow: 'auto',
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    padding: 5,
-    margin: 5,
-    fontSize: 12,
-    fontWeight: 'bold',
-    fontColor: '#E5E9F0',
-  },
+
 };
 
 export const styleNote = {
@@ -500,17 +331,7 @@ export const styleNote = {
     fontColor: '#E5E9F0',
 
   },
-  span: {
-    margin: 5,
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#FFFFFF',
-  },
-  form: {
-    height: 350,
-    width: 340,
-    border: 'solid black 1px',
-  },
+
   button: {
     height: 30,
     width: 60,
@@ -529,28 +350,7 @@ export const styleNote = {
   },
 };
 export const styleSortBar = {
-  div: {
-    height: 184,
-    width: 340,
-    border: 'solid black 1px',
-    borderRadius: 10,
-    overflow: 'auto',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'start',
-    padding: 5,
-    margin: 5,
-    fontSize: 24,
-    fontWeight: 'bold',
-    fontColor: '#E5E9F0',
 
-  },
-  span: {
-    margin: 5,
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#FFFFFF',
-  },
   form: {
     height: 40,
     width: 280,
@@ -600,29 +400,10 @@ export const styleSortBar = {
 };
 
 export const styleUserAuth = {
-  div: {
-    height: 184,
-    width: 340,
-    border: 'solid black 1px',
-    borderRadius: 10,
-    overflow: 'auto',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'start',
-    padding: 5,
-    margin: 5,
-    fontSize: 24,
-    fontWeight: 'bold',
-    fontColor: '#E5E9F0',
 
-  },
   span: {
     margin: 1,
     fontSize: 12,
-    // fontWeight: 'bold',
-    // color: '#FFFFFF',
-    // alignItems: 'center',
-    // justifyContent: 'center',
   },
   form: {
     height: 80,
